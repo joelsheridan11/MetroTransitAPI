@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fetch API Sandbox</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+
+.hidden {
+	display: none;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Metro Transit API</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  </div>
+  <div class="container">
+  
+    <br>
+<h3 class="display-4-bm-4"> Providers</h3>
+ <div><select class="classpicker" id="providerDropdown" onchange="getproviderDropdown(this.value); clearDatatable(); showRoutesDiv();" name="Providers"></select></div>
+ <br>
+ <div id="routesDiv" class="hidden">
+ <h3 class="display-4-bm-4"> Routes</h3>
+ <div><select class="classpicker" id="routeDropdown" onchange="createDirectionDropdown(this.value); getrouteDropdown(this.value); showDirectionsDiv(); clearDatatable();"name="Routes"></select></div>
+ </div>
+ <br>
+ <div id="directionsDiv" class="hidden">
+ <h3 class="display-4-bm-4"> Direction</h3>
+ <div><select class="classpicker" id="directionsDropdown" onchange="getdirectionsDropdown(); createStopsDropdown(); showStopsDiv(); clearDatatable();"  name="Directions"></select></div>
+ </div>
+ <br>
+ <div id="stopsDiv" class="hidden">
+ <h3 class="display-4-bm-4"> Stops</h3>
+ <div><select class="classpicker" id="stopsDropdown" onchange="getStopsDropdown(); showButtonDiv(); clearDatatable();"  name="Stops"></select></div>
+ </div>
+ <br>
+ <div id="buttonDiv" class="hidden">
+ <div class="d-flex">
+      <button class="btn btn-success mr-4" id="searchBtn" >Get Next Departure Details</button>
+    </div>
+    <br>
+    </div>
+    <div id="tableDiv" class="hidden">
+<div id="ResultsTable">
+<table id="busTable" class="table table-striped table-bordered" style="width:100%">
+<thead class="thead-light">
+<tbody id="bustTableBody">
+    <tr>
+        <th>Departure</th>
+		<th>DepartureTime</th>
+		<th>Description</th>
+		<th>Gate</th>
+		<th>Route</th>
+		<th>RouteDirection</th>
+		<th>Terminal</th>
+		<th>VehicleLatitude</th>
+		<th>VehicleLongitude</th>
+    </tr>
+    </body>
+    </thead>
+</table>
+</div>
+</div>
+ <br>
+
+</div>
+
+  <script>
+  
+  </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+</html>
